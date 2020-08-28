@@ -1,4 +1,5 @@
---Script para generar la base de datos Almacén; que tiene como responsabilidad de mantener la informacion del invetario de existencias en un almacén
+--Script para generar la base de datos Almacén; que tiene como responsabilidad de mantener 
+--la informacion del invetario de existencias en un almacén
 
 --Descomentar la linea para generar la base de datos Almacen_db
 --If Not Exists (select * from sys.databases where name = 'Almacen_db') Create DataBase Almacen_db
