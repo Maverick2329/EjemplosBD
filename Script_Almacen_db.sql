@@ -23,3 +23,8 @@ precioCosto decimal(16,4) not null,
 cantidadExistencia decimal(16,4)not null,
 id_categoria int not null Foreign key (id_categoria) references Categoria (id_categoria))
 
+--Se insertan los primeros registros para la tabla Categoria
+insert into Categoria values('Bebes y Niños','Productos para Bebes y Niños')
+insert into Categoria values('Congelados','Productos Congelados')
+insert into Categoria values('Despensa','Productos de Consumo embasados en botella, caja, lata, diversos')
+insert into Categoria values('Higiene','Productos de Higiene personal')
