@@ -23,8 +23,16 @@ precioCosto decimal(16,4) not null,
 cantidadExistencia decimal(16,4)not null,
 id_categoria int not null Foreign key (id_categoria) references Categoria (id_categoria))
 
+Create Table Usuario(
+id_usuario int identity(1,1) primary key,
+email varchar(100) Not Null,
+password varchar(150) Not Null,
+nombre varchar(100) Not Null)
+
 --Se insertan los primeros registros para la tabla Categoria
 insert into Categoria values('Bebes y Niños','Productos para Bebes y Niños')
 insert into Categoria values('Congelados','Productos Congelados')
 insert into Categoria values('Despensa','Productos de Consumo embasados en botella, caja, lata, diversos')
 insert into Categoria values('Higiene','Productos de Higiene personal')
+
+insert into Usuario values('almacen@almacen.com','9d8cb2a3bec6cdb078ef56c799ea0fc81f3005f528ab08d446ebc14e800f6cbf','Supervisor Almacén')
