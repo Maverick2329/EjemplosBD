@@ -29,6 +29,28 @@ email varchar(100) Not Null,
 password varchar(150) Not Null,
 nombre varchar(100) Not Null)
 
+Create Table Cliente(
+id_cliente int identity(1,1) primary key,
+nombre varchar(100) not null,
+apellidoPaterno varchar(100) not null,
+apellidoMaterno varchar(100),
+email varchar(50),
+telefono varchar(10))
+
+Create Table Venta(
+id_venta int identity(1,1) primary key,
+fecha datetime not null,
+id_cliente int not null Foreign key (id_cliente) references Cliente(id_cliente),
+total decimal(16,4))
+
+Create Table Concepto(
+id_concepto int identity(1,1) primary key,
+id_venta int not null Foreign key (id_venta) references Venta(id_venta),
+cantidad int not null,
+precioUnitario decimal(16,4) not Null,
+importe decimal(16,4) not null,
+id_producto int not null Foreign key (id_producto) references Producto(id_producto))
+
 --Se insertan los primeros registros para la tabla Categoria
 insert into Categoria values('Bebes y Niños','Productos para Bebes y Niños')
 insert into Categoria values('Congelados','Productos Congelados')
